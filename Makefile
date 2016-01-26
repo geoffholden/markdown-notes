@@ -39,6 +39,6 @@ index.md: $(filter-out index.md,$(MD))
 	echo $^ | xargs -n 1 | sed -e 's/^\(.*\)\.md$$/-   [\1](\1.html)/g' >> index.md
 
 livereload: index.html html
-	(xdg-open http://localhost:35729/ || open http://localhost:35729/)
+	$(shell xdg-open http://localhost:35729/ 2>/dev/null || open http://localhost:35729/)
 	livereloadx -s .
 
