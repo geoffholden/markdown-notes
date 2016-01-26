@@ -12,14 +12,14 @@ Clone the repository and add any custom styles in style.css. Create Markdown fil
 
 ### Make Targets
 
-`make` or `make html` will convert all md files to HTML.
-
-`make pdf` or `make all` will convert all md file to HTML and PDF.
-
-`make clean` will remove all generated files.
+-	`make` or `make html` will convert all md files to HTML.
+-	`make pdf` or `make all` will convert all md file to HTML and PDF.
+-	`make clean` will remove all generated files.
+-	`make livereload` will start a livereload web server and open a browser window.
 
 Dependencies
 ------------
 
 -	[markdown-tool](https://github.com/geoffholden/markdown-tool/) to convert the Markdown to HTML
 -	[wkhtmltopdf](http://wkhtmltopdf.org/) to convert HTML to PDF
+-	[LiveReloadX](http://nitoyon.github.io/livereloadx/) for live-reloading web server.

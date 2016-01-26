@@ -5,6 +5,7 @@ IMAGE_OUT=$(patsubst %.md,%.md_files,$(MD))
 
 .PHONY: clean init
 .DEFAULT_GOAL=html
+.INTERMEDIATE: index.md index.html
 
 all: html pdf
 
@@ -31,4 +32,13 @@ clean:
 		--background \
 		--quiet \
 		$< $@
+
+index.md: $(filter-out index.md,$(MD))
+	echo "Index" > index.md
+	echo "=====" >> index.md
+	echo $^ | xargs -n 1 | sed -e 's/^\(.*\)\.md$$/-   [\1](\1.html)/g' >> index.md
+
+livereload: index.html html
+	(xdg-open http://localhost:35729/ || open http://localhost:35729/)
+	livereloadx -s .
 
