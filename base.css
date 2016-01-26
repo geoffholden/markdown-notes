@@ -1,0 +1,102 @@
+/*
+ * Base CSS file.
+ */
+body {
+    min-width: 29em;
+    max-width: 39em;
+    margin-left: auto;
+    margin-right: auto;
+    widows: 2;
+    orphans: 2;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+ul,ol {
+    list-style-position: outside;
+    padding-left: 1.5em;
+}
+
+li + li {
+    margin-top: 0.5em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.25em;
+}
+
+table th {
+    white-space: nowrap;
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav ul ul {
+    list-style-type: disc;
+    padding-left: 0.6em;
+    list-style-position: inside;
+}
+
+nav li + li {
+    margin: 0;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+@media screen {
+    html {
+        background-color: lightgrey;
+    }
+
+    body {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 2em;
+        padding-top: 1em;
+        background-color: white;
+
+        box-shadow: 1em 1em 2em #888888;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    nav {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 2em;
+        padding: 1em;
+        max-width: 13em;
+        background-color: darkgrey;
+        font-family: Helvetica, Arial, sans-serif;
+        box-shadow: 0.25em 0.25em 0.5em #888888;
+    }
+}
