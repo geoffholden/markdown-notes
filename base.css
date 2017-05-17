@@ -100,3 +100,11 @@ nav a {
         box-shadow: 0.25em 0.25em 0.5em #888888;
     }
 }
+
+@media print {
+    a:after {
+        content: " (" attr(href) ") ";
+        font-size:0.8em;
+        font-weight:normal;
+    }
+}
