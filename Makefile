@@ -17,7 +17,7 @@ clean:
 	rm -rf $(HTML_OUT) $(PDF_OUT) $(IMAGE_OUT)
 
 %.html: %.md
-	markdown-tool -toc -page -css style.css $< $@
+	markdown-tool -toc -page -css style.css -syntax $< $@
 
 %.pdf: %.html style.css base.css
 	wkhtmltopdf \
@@ -39,6 +39,6 @@ index.md: $(filter-out index.md,$(MD))
 	echo $^ | xargs -n 1 | sed -e 's/^\(.*\)\.md$$/-   [\1](\1.html)/g' >> index.md
 
 livereload: index.html html
-	$(shell xdg-open http://localhost:35729/ 2>/dev/null || open http://localhost:35729/)
+	xdg-open http://localhost:35729/ 2>/dev/null || open http://localhost:35729/
 	livereloadx -s .
 
